@@ -1,0 +1,19 @@
+/* pages/ws.wxss */
+
+page {
+    background-color: #F5F5F5;
+}
+
+.container {
+    padding: 10rpx 20rpx;
+    align-content: center;
+}
+
+.text-content {
+    width:100%;
+    padding: 10rpx;
+    border-bottom: 1rpx solid #F5F5F5;
+    background-color: #FFFFFF;
+    word-wrap: break-word;
+}
+

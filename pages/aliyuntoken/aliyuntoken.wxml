@@ -1,0 +1,9 @@
+<!--pages/aliyuntoken/aliyuntoken.wxml-->
+<view class="container">
+    <view class="textContainer">
+        <text class="token">{{token}}</text>
+    </view>
+    <view class="btnContainer" style="position: fixed;bottom:0;">
+        <button type="primary" bindtap="onTokenGet">获取token</button>
+    </view>
+</view>

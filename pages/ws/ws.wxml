@@ -1,0 +1,9 @@
+<!--pages/ws.wxml-->
+<view class="container">
+    <block wx:for="{{data}}" wx:key="index">
+        <view class="text-content">{{item}}</view>
+    </block>
+    <view class="btnContainer" style="position: fixed;bottom:0;">
+        <button type="primary" bindtap="onWsTest">测试ws</button>
+    </view>
+</view>

@@ -1,0 +1,10 @@
+<!--pages/st/st.wxml-->
+<view class="container">
+    <view class="textContainer">
+        <text class="stResult">{{stResult}}</text>
+    </view>
+    <view class="btnContainer" style="position: fixed;bottom:0;">
+        <button type="primary" bindtap="onStStart">开始识别</button>
+        <button type="primary" bindtap="onStStop">停止识别</button>
+    </view>
+</view>

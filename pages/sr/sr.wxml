@@ -1,0 +1,10 @@
+<!--pages/sr/sr.wxml-->
+<view class="container">
+    <view class="textContainer">
+        <text class="srResult">{{srResult}}</text>
+    </view>
+    <view class="btnContainer" style="position: fixed;bottom:0;">
+        <button type="primary" bindtap="onSrStart">开始识别</button>
+        <button type="primary" bindtap="onSrStop">停止识别</button>
+    </view>
+</view>

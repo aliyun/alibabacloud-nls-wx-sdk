@@ -1,0 +1,14 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="menu" id="buttonContainer">
+    <text class="user">{{user}}</text>
+    <button type="primary" bindtap="OnLoginClick">阿里云账号登录</button>
+    <button type="primary" bindtap="OnRecordTestClick">录音测试</button>
+    <button type="primary" bindtap="OnCleanCacheClick">清理缓存</button>
+    <button type="primary" bindtap="OnTokenTestClick">获取Token</button>
+    <button type="primary" bindtap="OnWSTestClick">WS连通性测试</button>
+    <button type="primary" bindtap="OnSRTestClick">一句话识别测试</button>
+    <button type="primary" bindtap="OnSTTestClick">实时识别测试</button>
+    <button type="primary" bindtap="OnTTSTestClick">语音合成测试</button>
+  </view>
+</view>

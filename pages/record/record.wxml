@@ -1,0 +1,10 @@
+<!--pages/record/record.wxml-->
+<view class="container">
+    <view class="textContainer">
+        <text class="status">{{status}}</text>
+    </view>
+    <view class="btnContainer" style="position: fixed;bottom:0;">
+        <button type="primary" bindtap="onStartRecord">开始录音</button>
+        <button type="primary" bindtap="onStopRecord">停止录音</button>
+    </view>
+</view>

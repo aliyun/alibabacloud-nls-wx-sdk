@@ -1,0 +1,21 @@
+/* pages/login/login.wxss */
+.input{
+    width: 250px;
+    height: 50px; 
+    border: 1px solid lightgray;
+    border-radius: 25px;
+    text-align: center;
+}
+
+.item {
+    padding-bottom: 50rpx;
+}
+
+.center {
+    text-align: center;
+}
+
+.attention {
+    text-align: center;
+    padding-bottom: 50rpx;
+}

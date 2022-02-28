@@ -1,0 +1,8 @@
+<!--pages/tts/tts.wxml-->
+<view class="container">
+    <text class="attention">注意：小程序不支持流式播放，故合成必须等待合成完毕才会播放</text>
+    <input class="input" name="text" placeholder="待合成文本" placeholder-class="center" bindinput="textInput" />
+    <view class="btnContainer" style="position: fixed;bottom:0;">
+        <button type="primary" bindtap="onTtsStart">开始合成</button>
+    </view>
+</view>

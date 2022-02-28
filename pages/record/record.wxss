@@ -1,0 +1,4 @@
+/* pages/record/record.wxss */
+.btnContainer {
+    margin-bottom: 50rpx;
+}

@@ -1,0 +1,4 @@
+/* pages/sr/sr.wxss */
+.srResult {
+    word-break:break-all;
+}

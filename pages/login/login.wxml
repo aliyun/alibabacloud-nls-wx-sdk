@@ -1,0 +1,16 @@
+<!--pages/login/login.wxml-->
+<view class="container">
+    <text class="attention">注意：使用主账号存在安全风险 </text>
+    <view class="item">
+        <input class="input" name="text" placeholder="账号AKID" placeholder-class="center" bindinput="textAKID" />
+    </view>
+    <view class="item">
+    <input class="input" name="text" placeholder="账号AKKEY" placeholder-class="center" bindinput="textAKKEY" />
+    </view>
+    <view class="item">
+    <input class="input" name="text" placeholder="项目APPKEY" placeholder-class="center" bindinput="textAPPKEY" />
+    </view>
+    <view class="btnContainer" style="position: fixed;bottom:0;">
+        <button type="primary" bindtap="onSave">保存信息</button>
+    </view>
+</view>
