@@ -41,17 +41,16 @@ Page({
             console.log(`recv size: ${msg.byteLength}`)
             //console.log(dumpFile.write(msg, "binary"))
             if (this.data.saveFile) {
-                fs.appendFile({
-                    filePath: this.data.saveFile,
-                    data: msg,
-                    encoding : "binary",
-                    success: (res)=>{
-                        console.log(`append ${msg.byteLength}`)
-                    },
-                    fail: (res)=>{
-                        console.log("append failed since:" + res.errMsg)
-                    }
-                })
+                try {
+                  fs.appendFileSync(
+                      this.data.saveFile,
+                      msg,
+                      "binary"
+                  )
+                  console.log(`append ${msg.byteLength}`)
+                } catch (e) {
+                  console.error(e)
+                }
             } else {
                 console.log("save file empty")
             }
