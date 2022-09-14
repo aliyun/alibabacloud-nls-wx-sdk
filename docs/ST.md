@@ -86,7 +86,7 @@ object类型对象，字段如下：
     "format": "pcm",
     "sample_rate": 16000,
     "enable_intermediate_result": true,
-    "enable_punctuation_predition": true,
+    "enable_punctuation_prediction": true,
     "enable_inverse_text_normalization": true
 }
 ```
