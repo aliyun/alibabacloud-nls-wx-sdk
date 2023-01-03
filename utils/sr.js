@@ -33,7 +33,9 @@ class SpeechRecognition {
       sample_rate:16000,
       enable_intermediate_result:true,
       enable_punctuation_prediction:true,
-      enable_inverse_text_normalization:true
+      enable_inverse_text_normalization:true,
+      enable_voice_detection:true,
+      max_end_silence:2000,
     }
   }
 
@@ -55,7 +57,6 @@ class SpeechRecognition {
       payload: param,
       context: this._client.defaultContext()
     }
-
     return new Promise(async (resolve, reject) => {
       try {
         await this._client.start(
@@ -70,11 +71,12 @@ class SpeechRecognition {
               } else if (msgObj.header.name === "RecognitionResultChanged") {
                 this._event.emit("changed", str)
               } else if (msgObj.header.name === "RecognitionCompleted") {
-                this._event.emit("RecognitionCompleted", str)
+                this._client.shutdown()
+                this._client = null
+                this._event.emit("completed", str)
               } else if (msgObj.header.name === "TaskFailed") {
                 this._client.shutdown()
                 this._client = null
-
                 this._event.emit("TaskFailed", str)
                 this._event.emit("failed", str)
               }
@@ -113,21 +115,18 @@ class SpeechRecognition {
     }
 
     return new Promise((resolve, reject) => {
-      this._event.on("RecognitionCompleted",
+      this._event.on("completed",
         (msg) => {
           if (this._client) {
             this._client.shutdown()
             this._client = null
           }
-          this._event.emit("completed", msg)
           resolve(msg)
         })
-
       this._event.on("TaskFailed",
         (msg) => {
           reject(msg)
         })
-
       this._client.send(JSON.stringify(req), false)
     })
   }

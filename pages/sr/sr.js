@@ -75,6 +75,8 @@ Page({
             this.setData({
                 srResult : msg
             })
+            wx.getRecorderManager().stop()
+            this.data.srStart = false
         })
     
         sr.on("closed", () => {

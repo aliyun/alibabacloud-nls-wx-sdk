@@ -1,0 +1,20 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/record/record",
+        "pages/ws/ws",
+        "pages/aliyuntoken/aliyuntoken",
+        "pages/sr/sr",
+        "pages/st/st",
+        "pages/tts/tts",
+        "pages/login/login"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "NLS SDK测试工具",
+        "navigationBarTextStyle": "black"
+    },
+    "style": "v2",
+    "sitemapLocation": "sitemap.json"
+}
