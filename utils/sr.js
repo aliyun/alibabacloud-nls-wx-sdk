@@ -40,6 +40,7 @@ class SpeechRecognition {
   }
 
   on(which, handler) {
+    this._event.off(which)
     this._event.on(which, handler)
   }
 
@@ -115,6 +116,7 @@ class SpeechRecognition {
     }
 
     return new Promise((resolve, reject) => {
+      tshi._event.off("completed")
       this._event.on("completed",
         (msg) => {
           if (this._client) {
@@ -123,6 +125,7 @@ class SpeechRecognition {
           }
           resolve(msg)
         })
+      this._event.off("TaskFailed")
       this._event.on("TaskFailed",
         (msg) => {
           reject(msg)

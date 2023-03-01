@@ -40,6 +40,7 @@ class SpeechSynthesizer {
   }
 
   on(which, handler) {
+    this._event.off(which)
     this._event.on(which, handler)
   }
 

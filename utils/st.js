@@ -38,6 +38,7 @@ class SpeechTranscription {
   }
 
   on(which, handler) {
+    this._event.off(which)
     this._event.on(which, handler)
   }
 
@@ -116,6 +117,7 @@ class SpeechTranscription {
     }
 
     return new Promise((resolve, reject) => {
+      this._event.off("TranscriptionCompleted")
       this._event.on("TranscriptionCompleted",
         (msg) => {
           if (this._client) {
@@ -126,6 +128,7 @@ class SpeechTranscription {
           resolve(msg)
         })
 
+      this._event.off("TaskFailed")
       this._event.on("TaskFailed",
         (msg) => {
           reject(msg)
