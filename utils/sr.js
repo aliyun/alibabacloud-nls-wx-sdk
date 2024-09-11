@@ -116,7 +116,7 @@ class SpeechRecognition {
     }
 
     return new Promise((resolve, reject) => {
-      tshi._event.off("completed")
+      this._event.off("completed")
       this._event.on("completed",
         (msg) => {
           if (this._client) {
