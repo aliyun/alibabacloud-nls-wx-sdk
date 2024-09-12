@@ -72,9 +72,9 @@ class SpeechRecognition {
               } else if (msgObj.header.name === "RecognitionResultChanged") {
                 this._event.emit("changed", str)
               } else if (msgObj.header.name === "RecognitionCompleted") {
-                this._client.shutdown()
-                this._client = null
-                this._event.emit("completed", str)
+                //this._client.shutdown()
+                //this._client = null
+                this._event.emit("RecognitionCompleted", str)
               } else if (msgObj.header.name === "TaskFailed") {
                 this._client.shutdown()
                 this._client = null
@@ -116,13 +116,14 @@ class SpeechRecognition {
     }
 
     return new Promise((resolve, reject) => {
-      this._event.off("completed")
-      this._event.on("completed",
+      this._event.off("RecognitionCompleted")
+      this._event.on("RecognitionCompleted",
         (msg) => {
           if (this._client) {
             this._client.shutdown()
             this._client = null
           }
+          this._event.emit("completed", msg)
           resolve(msg)
         })
       this._event.off("TaskFailed")
@@ -153,3 +154,4 @@ class SpeechRecognition {
 }
 
 module.exports = SpeechRecognition
+
